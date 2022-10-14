@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta data-name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Image Gallery with Search Box</title> 
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.container .search-box{
+    position: relative;
+    height: 42px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #323334;
+    padding: 0 15px 0 45px;
+    color: #fff;
+    border-radius: 6px;
+}
+.search-box i{
+    position: absolute;
+    z-index: 2;
+    color: #999;
+    top: 50%;
+    left: 15px;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+.container .images .image-box{
+    position: relative;
+    height: 300px;
+    width: 210px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.images .image-box{
+    margin: 8px;
+}
+.images .image-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s linear;
+}
+.image-box:hover img{
+    transform: scale(1.05);
+}
+.image-box h6{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+body
+{
+background-color:lightgray;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search a movie">
+        </div>
+
+        <div class="images">
+
+<div class="image-box" data-name="spiderman">
+<img src="https://i.pinimg.com/736x/17/3c/d6/173cd6be55a3daa28939a79bbef0f9ad.jpg">
+<h6>spiderman 1</h6>
+</div>
+
+<div class="image-box" data-name="vijay">
+<img src="https://www.99images.com/download-image/853960/1080x1621">
+<h6>Vijay</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://4.bp.blogspot.com/_kLvzpyZm7zM/S_FYu7J5yNI/AAAAAAAANKw/qkDANCiGAgE/s1600/ravana-maniratnam-latest-photos-stills-pics-05.jpg">
+<h6>manirathnam</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://i.pinimg.com/originals/90/ce/21/90ce210f369d775a3437307807f6b24d.jpg">
+<h6>Rahman</h6>
+</div>
+
+<div class="image-box" data-name="ironman">
+<img src="https://m.media-amazon.com/images/M/MV5BNjg4NjM1NDI0NF5BMl5BanBnXkFtZTcwMTEzNTIzMw@@._V1_.jpg">
+<h6>ironman 1</h6>
+</div>
+
+<div class="image-box" data-name="shankar">
+<img src="https://www.bollywoodhungama.com/wp-content/uploads/2021/04/Lyca-Productions-takes-Robot-director-Shankar-to-court.jpg">
+<h6>Shankar</h6>
+</div>
+
+<div class="image-box" data-name="nayantara">
+<img src="https://1.bp.blogspot.com/-LenqdGMjoJQ/X43cGJXxExI/AAAAAAAAfWY/1bBMrDaL-d0tq-oC75Z-9yLAAgaeXVOAACLcBGAsYHQ/s1280/Nayanthara%2Bimages%2B%25287%2529.jpg">
+<h6>Nayantara</h6>
+</div>
+
+<div class="image-box" data-name="lokesh">
+<img src="https://www.mirchi9.com/wp-content/uploads/2022/06/Lokesh-kanagaraj.jpg">
+<h6>Lokesh</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://www.pinkvilla.com/imageresize/bigil_box_office_main__0.jpg?width=752&format=webp&t=pvorg">
+<h6>Bigil</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://pbs.twimg.com/media/EuWuhX-VgAMMcHS.jpg">
+<h6>Thalapathi</h6>
+</div>
+
+<div class="image-box" data-name="spiderman">
+<img src="https://picfiles.alphacoders.com/436/thumb-436333.jpg">
+<h6>spiderman 2</h6>
+</div>
+
+<div class="image-box" data-name="shankar">
+<img src="https://m.media-amazon.com/images/M/MV5BNWIyYWQ4Y2EtYjk1My00NDdmLWI0YzgtN2ZmM2Q0YmM3MWJkXkEyXkFqcGdeQXVyMjYwMDk5NjE@._V1_.jpg">
+<h6>I</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://m.behindwoods.com/tamil-movies/slideshow/writer-balakumarans-10-classic-films/images/jeans.jpg">
+<h6>Jeans</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://wallpaperaccess.com/full/4495564.jpg">
+<h6>Ravanan</h6>
+</div>
+
+<div class="image-box" data-name="nayantara">
+<img src="https://www.itl.cat/pngfile/big/232-2326852_nayanthara-aram-images-hd.jpg">
+<h6>Aram</h6>
+</div>
+
+
+<div class="image-box" data-name="anirudh">
+<img src="https://i.pinimg.com/originals/62/2b/13/622b13bf8910845fd571f4ce2a94461c.jpg">
+<h6>Anirudh</h6>
+</div>
+
+<div class="image-box" data-name="lokesh">
+<img src="https://wallpapercave.com/wp/wp8502473.jpg">
+<h6>Master</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://www.pinkvilla.com/imageresize/abhishek_bachchan_aishwarya_guru_14_big_b_lauds_son.jpg?width=752&format=webp&t=pvorg">
+<h6>Gurn</h6>
+</div>
+
+<div class="image-box" data-name="spiderman">
+<img src="https://i.pinimg.com/originals/fb/bc/fe/fbbcfe2468df75a5fd6de3d68b65dc22.jpg">
+<h6>spiderman 3</h6>
+</div>
+
+<div class="image-box" data-name="vijay">
+<img src="https://www.newsintv.com/wp-content/uploads/2022/01/beast-hd-photos.jpg">
+<h6>Beast</h6>
+</div>
+
+<div class="image-box" data-name="nayantara">
+<img src="https://m.media-amazon.com/images/M/MV5BNGM0YjE5MWYtYzA2Mi00NjQyLWIyZmEtZmEyN2JkYzFkNTc0XkEyXkFqcGdeQXVyNjkwOTg4MTA@._V1_.jpg">
+<h6>Mookuthi Amman</h6>
+</div>
+
+<div class="image-box" data-name="shankar">
+<img src="https://i.indiglamour.com/photogallery/tamil/movies/2012/August14/Sivaji-3d/normal/Sivaji-3d_xx_21585.jpg">
+<h6>Sivaji</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://moviegalleri.net/wp-content/gallery/ps-1-first-look/Jayam-Ravi-as-Arulmozhivarman-in-Ponniyin-Selvan-1-First-Look-Poster-HD.jpg">
+<h6>Ponniyin Selvan</h6>
+</div>
+
+<div class="image-box" data-name="anirudh">
+<img src="https://igimages.gumlet.io/tamil/gallery/movies/kathi31314kijhysd/Kaththi%20New%20Stills_7.jpg?w=376&dpr=2.6">
+<h6>Katthi</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://img1.hotstarext.com/image/upload/f_auto,t_vl/sources/r1/cms/prod/6754/146754-v">
+<h6>Chekka Chivandha Vaanam</h6>
+</div>
+
+
+<div class="image-box" data-name="lokesh">
+<img src="https://m.media-amazon.com/images/M/MV5BZmI2ZWNiYzctYmMyYS00ZDlkLWFiMDUtYTVhNWFmMjU1Y2FkXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_.jpg">
+<h6>Kaithi</h6>
+</div>
+
+<div class="image-box" data-name="vijay">
+<img src="https://m.media-amazon.com/images/M/MV5BNWMzMTE1ZGItNTE1ZS00YzllLTk1MGEtNDMyMDk4N2YxNTM0XkEyXkFqcGdeQXVyNjkwOTg4MTA@._V1_.jpg">
+<h6>Theri</h6>
+</div>
+
+<div class="image-box" data-name="ironman">
+<img src="https://i.pinimg.com/originals/90/f0/d9/90f0d9b979553db5e84ef2e309094cf5.jpg">
+<h6>ironman 2</h6>
+</div>
+
+<div class="image-box" data-name="nayantara">
+<img src="https://images.hindustantimes.com/img/2022/05/16/1600x900/o2_1652684407941_1652684426839.jpg">
+<h6>O-2</h6>
+</div>
+
+<div class="image-box" data-name="spiderman">
+<img src="https://cdn.vox-cdn.com/thumbor/iLzs-QdDkv_YOgWlYF4Edkgurpo=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/16235531/peter.jpg">
+<h6>spiderman 4</h6>
+</div>
+
+<div class="image-box" data-name="shankar">
+<img src="https://www.filmibeat.com/ph-big/2012/01/nanban_132583394812.jpg">
+<h6>Nanban</h6>
+</div>
+
+<div class="image-box" data-name="anirudh">
+<img src="https://i.pinimg.com/originals/4a/1e/96/4a1e9636c7d90e717d33073c2771554c.jpg">
+<h6>Remo</h6>
+</div>
+
+<div class="image-box" data-name="vijay">
+<img src="https://www.wallsnapy.com/img_gallery/mersal-black-dress-hd-images-4554855.jpg">
+<h6>Mersal</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGQ0k-oUUJgspvvfP_Yr90Fjo_08mw46bZvA&usqp=CAU">
+<h6>Ok Kanmani</h6>
+</div>
+
+<div class="image-box" data-name="ironman">
+<img src="https://s2.best-wallpaper.net/wallpaper/iphone/1211/Iron-Man-3-HD_iphone_640x960.jpg">
+<h6>ironman 3</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://i.indiglamour.com/photogallery/tamil/movies/2010/jan18/Vinnaithandi_Varuvaya/wide/Vinnaithandi_Varuvaya_16682.jpg">
+<h6>Vinnai Thandi Varuvaya</h6>
+</div>
+
+<div class="image-box" data-name="nayantara">
+<img src="https://i.pinimg.com/236x/88/6d/5a/886d5a1ae3ef91207f1e4280ece0b41e.jpg">
+<h6>Maaya</h6>
+</div>
+
+<div class="image-box" data-name="shankar">
+<img src="http://www.behindwoods.com/tamil-movies/slideshow/top-10-tamil-movies-at-the-kerala-box-office/images/endhiran.jpg">
+<h6>Endhiran 1</h6>
+</div>
+
+<div class="image-box" data-name="vijay">
+<img src="https://w0.peakpx.com/wallpaper/106/944/HD-wallpaper-vijay-thrisha-actors-gilli-kollywood.jpg">
+<h6>Gilli</h6>
+</div>
+
+<div class="image-box" data-name="lokesh">
+<img src="https://moviegalleri.net/wp-content/gallery/vikram-hd-images/Vikram-Movie-HD-Images-0ed5942.jpg">
+<h6>Vikram</h6>
+</div>
+
+<div class="image-box" data-name="anirudh">
+<img src="https://wallpaperaccess.com/full/2245011.jpg">
+<h6>Darbar</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://i.pinimg.com/originals/41/09/b5/4109b58d92f6dd980012231910d9805e.jpg">
+<h6>Uyire</h6>
+</div>
+
+<div class="image-box" data-name="manirathnam">
+<img src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/9a76c62516fba003b8f54a65bdfdd9a441a23588b58a0b889675571079271e81._RI_.jpg">
+<h6>Roja</h6>
+</div>
+
+<div class="image-box" data-name="nayantara">
+<img src="https://www.filmibeat.com/wimg/desktop/2019/03/nayantara_155305740150.jpg">
+<h6>Naaanum Rowdy dhan</h6>
+</div>
+
+<div class="image-box" data-name="shankar">
+<img src="https://4.bp.blogspot.com/-bq6M8pfDlCI/XAIQEBwJfmI/AAAAAAAAQWo/Mo2vz19RAsYh9yL592d2Lp3Koi5opu8PQCLcBGAs/s1600/enthiran-2%2B%25281%2529.jpg">
+<h6>Endhiran 2</h6>
+</div>
+
+<div class="image-box" data-name="lokesh">
+<img src="https://files.prokerala.com/movies/pics/800/nagaram-stills-67096.jpg">
+<h6>Managaram</h6>
+</div>
+
+<div class="image-box" data-name="vijay">
+<img src="https://cdn.99images.com/photos/wallpapers/bollywood/arun-vijay%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-glhqo.jpg">
+<h6>Thupakki</h6>
+</div>
+
+<div class="image-box" data-name="rahman">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgH8sLceHnkKGNoJRS2YTQ5qVJqyImzSYn8Z6l2Fh9iLLg2wL-XnSugpcagSE-NHpU3w&usqp=CAU">
+<h6>Mudhalvan</h6>
+</div>
+
+<div class="image-box" data-name="anirudh">
+<img src="https://filmcrazy.in/wp-content/uploads/2022/04/Kaathuvaakula-Rendu-Kaadhal-Movie-HD-Exclusive-Stills-7.jpg">
+<h6>Kaathuvakkula Rendu Kaaadhal</h6>
+</div>
+
+
+        </div>
+    </div>
+<script>
+const search = document.querySelector(".search-box input"),
+      images = document.querySelectorAll(".image-box");
+
+search.addEventListener("keyup", e =>{
+    if(e.key == "Enter"){
+        let searcValue = search.value,
+            value = searcValue.toLowerCase();
+            images.forEach(image =>{
+                if(value === image.dataset.name){ //matching value with getting attribute of images
+                    return image.style.display = "block";
+                }
+                image.style.display = "none";
+         });
+    }
+});
+
+search.addEventListener("keyup", () =>{
+    if(search.value != "") return;
+
+    images.forEach(image =>{
+        image.style.display = "block";
+    })
+})
+
+</script>
+    <!--<script src="script.js"></script>-->
+</body>
+</html>
